@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Data Mahasiswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #bb4b0e;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            height: 100px;
+            margin-right: 20px;
+            margin-left: 30px;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #a20e09e7;
+            border-right: 1px solid #decfcf;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            border-bottom: 1px solid #efe7e7;
+        }
+
+        .sidebar a:hover {
+            background-color: #000000;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #c1a575d7;
+        }
+
+        .mahasiswa {
+            display: none;
+        }
+
+        .mahasiswa.active {
+            display: block;
+        }
+
+        .mahasiswa-detail {
+            display: flex;
+            align-items: flex-start; 
+        }
+
+        img.foto {
+            margin-right: 20px;
+            width: 150px;
+            height: 200px;
+        }
+
+        .info-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .info-container strong {
+            width: 150px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .info-container p {
+            margin: 0;
+        }
+
+        strong {
+            font-size: 1.2em; 
+            color: #333;     
+            font-weight: bold; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        ul {
+            font-size: 1.2em; 
+            color: #333;    
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo_polibang.png" alt="Logo Universitas">
+        <h2>Politeknik Balekambang Jepara</h2>
+        <img src="logo_rpl.png" alt="Logo Prodi">
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>List Nama Mahasiswa</h3>
+            <a href="#" onclick="showMahasiswa('mahasiswa1')">Alvin purnama sari</a>
+            <a href="#" onclick="showMahasiswa('mahasiswa2')">Bambang</a>
+            <a href="#" onclick="showMahasiswa('mahasiswa3')">Anita</a>
+        </div>
+        <div class="content">
+            <div id="mahasiswa1" class="mahasiswa active">
+                <div class="mahasiswa-detail">
+                    <img class="foto" src="alvin.jpg" alt="Foto Alvin">
+                    <div>
+                        <div class="info-container">
+                            <strong>Alamat:</strong>
+                            <p>Kedungombo RT12/RW01, Buaran, Mayong, Jepara</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Email:</strong>
+                            <p>alvinpurnamasari@gmail.com</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Deskripsi:</strong>
+                            <p>Saya adalah seorang mahasiswa yang suka belajar teknologi informasi.</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Hobi:</strong>
+                            <ul>
+                                <li>Membaca</li>
+                                <li>Menyanyi</li>
+                                
+                            </ul>
+                        </div>
+                        <div class="info-container">
+                            <strong>Cita-cita:</strong>
+                            <p>Menjadi Web Developer Profesional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mahasiswa2" class="mahasiswa">
+                <div class="mahasiswa-detail">
+                    <img class="foto" src="jimin.jpeg" alt="Foto Bambang">
+                    <div>
+                        <div class="info-container">
+                            <strong>Alamat:</strong>
+                            <p>Semarang</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Email:</strong>
+                            <p>bambang@gmail.com</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Deskripsi:</strong>
+                            <p>Saya adalah anak yang baik hati dan tidak sombong.</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Hobi:</strong>
+                            <ul>
+                                <li>Menyanyi</li>
+                                <li>Menari</li>
+                                <li>Bersepeda</li>
+                            </ul>
+                        </div>
+                        <div class="info-container">
+                            <strong>Cita-cita:</strong>
+                            <p>Web Programmer PHP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mahasiswa3" class="mahasiswa">
+                <div class="mahasiswa-detail">
+                    <img class="foto" src="anita.jpg" alt="Foto Anita">
+                    <div>
+                        <div class="info-container">
+                            <strong>Alamat:</strong>
+                            <p>Surabaya</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Email:</strong>
+                            <p>anita@mail.com</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Deskripsi:</strong>
+                            <p>Saya suka meneliti teknologi baru di bidang AI dan robotika.</p>
+                        </div>
+                        <div class="info-container">
+                            <strong>Hobi:</strong>
+                            <ul>
+                                <li>Memasak</li>
+                                <li>Melukis</li>
+                                <li>Bermain basket</li>
+                            </ul>
+                        </div>
+                        <div class="info-container">
+                            <strong>Cita-cita:</strong>
+                            <p>Menjadi Ahli AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan detail mahasiswa berdasarkan klik di daftar
+        function showMahasiswa(mahasiswaId) {
+            // Sembunyikan semua div mahasiswa
+            document.querySelectorAll('.mahasiswa').forEach(function(div) {
+                div.classList.remove('active');
+            });
+
+            // Tampilkan div yang sesuai dengan ID mahasiswa
+            document.getElementById(mahasiswaId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
