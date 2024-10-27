@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Polibang RPL</title>
+    <style>
+        /* Header */
+        .header {
+            background-color: #c4dce7;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 100px;
+            height: 100px;
+        }
+        .header div {
+            color: #1b650d;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #3898c5;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+        .nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        .content {
+            background-color: #e97223;
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #c17708;
+            width: 20%;
+            padding: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #171616;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #090909;
+            font-weight: bold;
+        }
+
+        /* Teman Data Section */
+        #temanData {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            position: relative;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #temanData img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        #temanData .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer img {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <img src="logo_polibang.png" alt="Logo Polibang">
+            <div> 
+                <h1>POLITEKNIK BALEKAMBANG JEPARA</h1>
+                <h2>Prodi REKAYASA PERANGKAT LUNAK</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <ul>
+            <li><a href="https://www.polibang.ac.id/">Home</a></li>
+            <li><a href="https://www.polibang.ac.id/profil-politeknik-balekambang/">About</a></li>
+            <li><a href="https://externalwebsite.com">External Link</a></li>
+            <li><a href="http://127.0.0.1:5500/praktikum4-alvinpurnamasari.html">Form</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Body -->
+    <div class="main-content">
+        <!-- Content -->
+        <div class="content">
+            <h2>Content</h2>
+            <h3>Visi & Misi</h3>
+            <h4> VISI</h4> 
+            <p> Menjadi Politeknik yang Berdaya Saing Global, Professional dan beraqidah Ahlus Sunnah Wal Jama’ah</p>
+            <h4> MISI</h4>
+            <p>1. Menyelenggarakan dan mengembangkan pendidikan yang mampu berdaya saing dalam era globalisasi.</p>
+            <p>2. Menyelenggarakan dan menghasilkan pendidikan yang profesional sesuai dengan prinsip good university governance.</p>
+            <p>3. Membangun komunitas yang ikhlas, toleransi, moderat dan religi dalam menjaga Negara Kesatuan Republik Indonesia.</p>
+            <p>4. Melaksanakan Tri Dharma peguruan tinggi.</p>
+            <h3>DAFTAR DOSEN RPL</h3>
+            <p>1. Indra Kurniawan M.kom</p>
+            <p>2. Ahmad Faiq Abror M.Pd</p>
+            <p>3. Sofia ulfah M.Kom</p>
+            <p>4. Aklis Noor Kholili M.Kom</p>
+            <p>5. Kresna Rahma Aji S.pd M.Pd</p>
+            <p>6. Muhammad Dliyaudin M.Kom</p>
+            <p>7.Taufiqurrohman M.E</p>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li><a href="#" onclick="showTeman1()">Amanda Agustina</a></li>
+                <li><a href="#" onclick="showTeman2()">Dika Alfiyana Nuryani</a></li>
+                <li><a href="#" onclick="showTeman3()">Fita Maulidiyah</a></li>
+                <li><a href="#" onclick="showTeman4()">Khumaidatus Salamah</a></li>
+            </ul>
+        </div>
+
+        <!-- Konten data Teman -->
+        <div id="temanData">
+            <span class="close-btn" onclick="closeTeman()">&times;</span>
+            <img id="temanFoto" src="" alt="Foto Teman">
+            <h3 id="temanNama"></h3>
+            <p><strong>Alamat:</strong> <span id="temanAlamat"></span></p>
+            <p><strong>Sekolah:</strong> <span id="temanSekolah"></span></p>
+            <p><strong>Email:</strong> <span id="temanEmail"></span></p>
+            <p><strong>No. Telepon:</strong> <span id="temanTelepon"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function showTeman1() {
+            document.getElementById('temanFoto').src = 'amanda.jpg'; // Using '.jpg' extension for local file
+            document.getElementById('temanNama').innerText = 'Amanda Agustina';
+            document.getElementById('temanAlamat').innerText = 'Muryolobo Nalumsari Jepara';
+            document.getElementById('temanSekolah').innerText = 'Politeknik Balekambang';
+            document.getElementById('temanEmail').innerText = 'emailteman1@example.com';
+            document.getElementById('temanTelepon').innerText = '081234567890';
+            document.getElementById('temanData').style.display = 'block';
+        }
+    
+        function showTeman2() {
+            document.getElementById('temanFoto').src = 'dika.jpg'; // Use '.jpg' extension for local file
+            document.getElementById('temanNama').innerText = 'Dika Alfiyana Nuryani';
+            document.getElementById('temanAlamat').innerText = 'Nalumsari, Jepara';
+            document.getElementById('temanSekolah').innerText = 'Politeknik Balekambang';
+            document.getElementById('temanEmail').innerText = 'emailteman2@example.com';
+            document.getElementById('temanTelepon').innerText = '081234567891';
+            document.getElementById('temanData').style.display = 'block';
+        }
+    
+        function showTeman3() {
+            document.getElementById('temanFoto').src = 'fita.jpg'; // Use '.jpg' extension for local file
+            document.getElementById('temanNama').innerText = 'Fita Maulidiyah';
+            document.getElementById('temanAlamat').innerText = 'Batealit, Jepara';
+            document.getElementById('temanSekolah').innerText = 'Politeknik Balekambang';
+            document.getElementById('temanEmail').innerText = 'emailteman3@example.com';
+            document.getElementById('temanTelepon').innerText = '081234567892';
+            document.getElementById('temanData').style.display = 'block';
+        }
+    
+        function showTeman4() {
+            document.getElementById('temanFoto').src = 'maida.jpg'; // Use '.jpg' extension for local file
+            document.getElementById('temanNama').innerText = 'Khumaidatus Salamah';
+            document.getElementById('temanAlamat').innerText = 'Welahan, Jepara';
+            document.getElementById('temanSekolah').innerText = 'Politeknik Jepara';
+            document.getElementById('temanEmail').innerText = 'emailteman4@example.com';
+            document.getElementById('temanTelepon').innerText = '081234567893';
+            document.getElementById('temanData').style.display = 'block';
+        }
+    
+        // Function to close the teman data display
+        function closeTeman() {
+            document.getElementById('temanData').style.display = 'none';
+        }
+    </script>
+    
+</script>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #e0e0e0; padding: 20px; text-align: center;">
+        <img src="logo_alvin.png" alt="Logo Polibang" width="100" height="50">
+        <p>Alvin Purnama sari</p>
+        <p>Politeknik Balekambang</p>
+    </div>
+</body>
+</html>
